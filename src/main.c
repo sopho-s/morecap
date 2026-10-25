@@ -7,7 +7,7 @@
 
 MODULE_AUTHOR("Nicholas Woods");
 MODULE_DESCRIPTION("More capabilities");
-MODULE_LICENSE("NONE");
+MODULE_LICENSE("GPL");
 
 static struct proc_dir_entry *proc_entry;
 
@@ -36,13 +36,14 @@ static int __init entry(void) {
     _rulebook->rulesets_len = 0;
     _rulebook->enabled = false;
     proc_entry = proc_create("morecap", 0666, NULL, &fops);
-    printk(KERN_INFO "Loaded morecap");
+    printk(KERN_INFO "Loaded morecap\n");
+    printk(KERN_INFO "No rulesets loaded, rulebook set as disabled\n");
     return 0;
 }
 
 static void __exit deentry(void) {
     proc_remove(proc_entry);
-    printk(KERN_INFO "Unloaded morecap");
+    printk(KERN_INFO "Unloaded morecap\n");
 }
 
 module_init(entry);
