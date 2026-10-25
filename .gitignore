@@ -1,0 +1,6 @@
+build/
+Kbuild
+linux*
+.venv/
+.nixenv.sh
+inenv.sh
