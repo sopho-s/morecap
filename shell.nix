@@ -26,6 +26,7 @@ in pkgs.mkShell {
     (python3.withPackages (ps: with ps; [ pip argcomplete requests setuptools ]))
     virtiofsd
     busybox
+    gdb
   ];
 
   hardeningDisable = [ "all" ];
